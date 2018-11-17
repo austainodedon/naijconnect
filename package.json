@@ -4,23 +4,20 @@
   "description": "Social network for Nigerian Students",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "server": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/austainodedon/naijconnect.git"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Augustine Emeka",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/austainodedon/naijconnect/issues"
-  },
-  "homepage": "https://github.com/austainodedon/naijconnect#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
     "express": "^4.16.4",
+    "gravatar": "^1.6.0",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.3.12",
     "passport": "^0.4.0",
